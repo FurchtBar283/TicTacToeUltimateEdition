@@ -82,7 +82,7 @@ public class Hauptfenster extends JFrame {
 			Integer.valueOf(input);
 		} catch (NumberFormatException e){
 			System.out.println("Fehler beim Konvertieren Baby");
-	    }
+		}
 		// SELFMADE Block Ende
 		
 		new Hauptfenster();
