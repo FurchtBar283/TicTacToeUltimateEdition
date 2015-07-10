@@ -69,7 +69,7 @@ public class Hauptfenster extends JFrame {
 		System.out.println("Ihre Eingabe bitte:");
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		String input = "";
-	    try {
+		try {
 			input = in.readLine();
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
