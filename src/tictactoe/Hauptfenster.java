@@ -68,8 +68,8 @@ public class Hauptfenster extends JFrame {
 		// SELFMADE Block Anfang
 		System.out.println("Ihre Eingabe bitte:");
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-	    String input = "";
-		try {
+		String input = "";
+	    try {
 			input = in.readLine();
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
@@ -78,13 +78,13 @@ public class Hauptfenster extends JFrame {
 		
 		System.out.println(input);
 
-	    try {
-	    	Integer.valueOf(input);
-	    } catch (NumberFormatException e){
-	    	System.out.println("Fehler beim Konvertieren Baby");
+		try {
+			Integer.valueOf(input);
+		} catch (NumberFormatException e){
+			System.out.println("Fehler beim Konvertieren Baby");
 	    }
-	    // SELFMADE Block Ende
-
+		// SELFMADE Block Ende
+		
 		new Hauptfenster();
 		playCount++;
 	}
