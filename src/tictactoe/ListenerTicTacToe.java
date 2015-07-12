@@ -38,10 +38,12 @@ public class ListenerTicTacToe implements TicTacToeListener{
 			// Alternative Deaktivierung über removeMouseListener-Funktion in Spielfeld
 			//hauptfenster.getSpielfeld().disableListener();
 			
+			System.out.println();
 			status = hauptfenster.getTicTacToeLogic().getWinner();
 			// Spieler hat gewonnen
 			if(status == TicTacToeLogic.SPIELER){
 				System.out.println("Spieler hat gewonnen!");
+				hauptfenster.getMenuebar().enableNewGame();
 				hauptfenster.getSpielfeld().setGameEndBackground(Color.green);
 				// SELFMADE
 				decision = JOptionPane.showOptionDialog(hauptfenster, "Sie haben das Spiel gewonnen!", "Spiel gewonnen", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, choices, "Neues Spiel");
@@ -50,6 +52,7 @@ public class ListenerTicTacToe implements TicTacToeListener{
 			// Computer hat gewonnen
 			if(status == TicTacToeLogic.TicTacToe){
 				System.out.println("Computer hat gewonnen!");
+				hauptfenster.getMenuebar().enableNewGame();
 				hauptfenster.getSpielfeld().setGameEndBackground(Color.yellow);
 				// SELFMADE
 				decision = JOptionPane.showOptionDialog(hauptfenster, "Sie haben das Spiel verloren!", "Spiel verloren", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, choices, "Neues Spiel");
@@ -58,6 +61,7 @@ public class ListenerTicTacToe implements TicTacToeListener{
 			// Keine Felder übrig, keiner hat gewonnen
 			if(status == TicTacToeLogic.FINISH){
 				System.out.println("Keiner hat gewonnen!");
+				hauptfenster.getMenuebar().enableNewGame();
 				hauptfenster.getSpielfeld().setGameEndBackground(Color.red);
 				// SELFMADE
 				decision = JOptionPane.showOptionDialog(hauptfenster, "Sie konnten das Spiel nicht für sich entscheiden!", "Unentschieden", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, choices, "Neues Spiel");

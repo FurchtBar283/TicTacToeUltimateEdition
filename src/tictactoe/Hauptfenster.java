@@ -21,6 +21,7 @@ public class Hauptfenster extends JFrame {
 
 	Spielfeld spielfeld;
 	TicTacToeLogic ticTacToeLogic;
+	Menuebar menuebar;
 
 	public Hauptfenster(){
 		super("TicTacToe");
@@ -33,10 +34,13 @@ public class Hauptfenster extends JFrame {
 		
 		initTicTacToeLogic();
 		initSpielfeld();
+		initMenuebar();
 		
 		this.pack();
 		// Fenster in der Bildschirm-Mitte positionieren, allerdings erst nach dem pack()
 		this.setLocationRelativeTo(null);
+		this.addKeyListener(new ListenerTastatur());
+		//this.setFocusable(true);
 	}
 	
 	// Init-Methode für das Spielfeld
@@ -121,5 +125,16 @@ public class Hauptfenster extends JFrame {
 	// Get-Methode für playCount
 	public int getPlayCount(){
 		return playCount;
+	}
+	
+	// Init-Methode für die Menübar
+	public void initMenuebar(){
+		menuebar = new Menuebar(this);
+		this.setJMenuBar(menuebar);
+	}
+	
+	// Get-Methode für Menübar
+	public Menuebar getMenuebar(){
+		return menuebar;
 	}
 }
