@@ -1,6 +1,6 @@
 package tictactoe;
 
-import java.awt.BorderLayout;
+//import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -12,7 +12,7 @@ import javax.swing.JEditorPane;
 //import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 
-public class Spielbeschreibung extends JDialog {
+public class Spielbeschreibung extends JDialog  {
 	private static final long serialVersionUID = 4;
 	
 	Hauptfenster hauptfenster;
@@ -26,7 +26,8 @@ public class Spielbeschreibung extends JDialog {
 		editorPane = new JEditorPane();
 		editorPane.setText("Dies ist die Spielbeschreibung dieses weirdo-Games!");
 		editorPane.setEditable(false);
-		this.setLayout(new BorderLayout());
+		//this.setLayout(new BorderLayout());
+		this.setTitle("Spielbeschreibung");
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 		editorScrollPane = new JScrollPane(editorPane);
@@ -71,7 +72,7 @@ public class Spielbeschreibung extends JDialog {
 		this.setSize(200, 200);
 		this.setResizable(true);
 		// Fokus nicht zwingend auf dem Fenster
-		this.setModal(false);
+		this.setModal(false); // Geht nur bei JDialog
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
 	}
