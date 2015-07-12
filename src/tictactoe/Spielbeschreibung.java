@@ -69,6 +69,7 @@ public class Spielbeschreibung extends JDialog  {
 		});
 		
 		this.add(closeButton, "South");
+		//this.add(closeButton, BorderLayout.SOUTH);
 		this.setSize(200, 200);
 		this.setResizable(true);
 		// Fokus nicht zwingend auf dem Fenster
